@@ -21,8 +21,6 @@
   }
   html { scroll-behavior: smooth; }
   body { background: var(--bg); color: var(--text); font-family: var(--fb); min-height: 100vh; overflow-x: hidden; }
-
-  /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     padding: 20px 48px; display: flex; justify-content: space-between; align-items: center;
@@ -31,8 +29,6 @@
   .nav-logo { font-family: var(--fd); font-size: 16px; font-weight: 900; letter-spacing: 0.22em; color: var(--accent); text-transform: uppercase; }
   .nav-ig { font-size: 12px; font-weight: 600; color: var(--text2); text-decoration: none; letter-spacing: 0.06em; transition: color 0.2s; }
   .nav-ig:hover { color: var(--accent); }
-
-  /* HERO */
   .hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; }
   .hero-img {
     position: absolute; inset: 0;
@@ -46,29 +42,16 @@
     background: linear-gradient(to bottom, rgba(8,8,8,0.25) 0%, rgba(8,8,8,0.05) 25%, rgba(8,8,8,0.55) 60%, rgba(8,8,8,0.97) 100%);
   }
   .hero-content { position: relative; z-index: 2; padding: 40px 48px 72px; max-width: 800px; }
-  .hero-eyebrow {
-    font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
-    color: var(--accent); margin-bottom: 16px;
-    opacity: 0; animation: fadeup 0.8s ease 0.3s forwards;
-  }
-  .hero-headline {
-    font-family: var(--fd); font-size: clamp(72px, 11vw, 128px); font-weight: 900;
-    line-height: 0.88; text-transform: uppercase; letter-spacing: -0.01em; margin-bottom: 28px;
-    opacity: 0; animation: fadeup 0.8s ease 0.45s forwards;
-  }
+  .hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; opacity: 0; animation: fadeup 0.8s ease 0.3s forwards; }
+  .hero-headline { font-family: var(--fd); font-size: clamp(72px, 11vw, 128px); font-weight: 900; line-height: 0.88; text-transform: uppercase; letter-spacing: -0.01em; margin-bottom: 28px; opacity: 0; animation: fadeup 0.8s ease 0.45s forwards; }
   .hero-headline em { font-style: normal; color: var(--accent); }
-  .hero-sub {
-    font-size: clamp(15px, 1.8vw, 18px); color: var(--text2); line-height: 1.7;
-    max-width: 500px; margin-bottom: 40px; font-weight: 400;
-    opacity: 0; animation: fadeup 0.8s ease 0.6s forwards;
-  }
+  .hero-sub { font-size: clamp(15px, 1.8vw, 18px); color: var(--text2); line-height: 1.7; max-width: 500px; margin-bottom: 40px; font-weight: 400; opacity: 0; animation: fadeup 0.8s ease 0.6s forwards; }
   .hero-sub strong { color: var(--text); font-weight: 600; }
-
-  /* FORM */
-  .waitlist-form {
-    display: flex; gap: 10px; max-width: 480px;
-    opacity: 0; animation: fadeup 0.8s ease 0.75s forwards;
-  }
+  .form-wrap { opacity: 0; animation: fadeup 0.8s ease 0.75s forwards; max-width: 480px; }
+  .waitlist-form { display: flex; gap: 10px; }
+  .name-form { display: none; flex-direction: column; gap: 10px; }
+  .name-form.show { display: flex; }
+  .name-row { display: flex; gap: 10px; }
   .waitlist-input {
     flex: 1; background: rgba(255,255,255,0.07); border: 0.5px solid rgba(255,255,255,0.16);
     border-radius: 10px; padding: 15px 18px; font-size: 15px; font-family: var(--fb);
@@ -80,29 +63,18 @@
     background: var(--accent); color: #080808; border: none; border-radius: 10px;
     padding: 15px 26px; font-family: var(--fd); font-size: 17px; font-weight: 900;
     letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; white-space: nowrap;
-    transition: opacity 0.2s, transform 0.15s;
+    transition: opacity 0.2s, transform 0.15s; width: 100%;
   }
   .waitlist-btn:hover { opacity: 0.9; transform: translateY(-1px); }
   .waitlist-btn:active { transform: translateY(0); }
-  .form-note {
-    font-size: 12px; color: var(--text3); margin-top: 12px;
-    opacity: 0; animation: fadeup 0.8s ease 0.9s forwards;
-  }
-  .success-msg {
-    display: none; align-items: center; gap: 14px; padding: 16px 20px;
-    background: rgba(232,255,71,0.07); border: 0.5px solid rgba(232,255,71,0.22);
-    border-radius: 10px; max-width: 480px;
-  }
+  .form-note { font-size: 12px; color: var(--text3); margin-top: 12px; opacity: 0; animation: fadeup 0.8s ease 0.9s forwards; }
+  .name-label { font-size: 13px; font-weight: 600; color: var(--text2); margin-bottom: 4px; letter-spacing: 0.04em; }
+  .success-msg { display: none; align-items: center; gap: 14px; padding: 16px 20px; background: rgba(232,255,71,0.07); border: 0.5px solid rgba(232,255,71,0.22); border-radius: 10px; max-width: 480px; }
   .success-msg.show { display: flex; }
-  .success-check { width: 34px; height: 34px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 16px; }
+  .success-check { width: 34px; height: 34px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 16px; color: #080808; font-weight: 900; }
   .success-text { font-size: 14px; color: var(--text); font-weight: 500; line-height: 1.55; }
   .success-text span { color: var(--accent); font-weight: 700; }
-
-  /* STATS */
-  .stats-strip {
-    position: relative; z-index: 2; background: var(--bg);
-    display: flex; border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border);
-  }
+  .stats-strip { position: relative; z-index: 2; background: var(--bg); display: flex; border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); }
   .stat-item { flex: 1; padding: 32px 40px; border-right: 0.5px solid var(--border); opacity: 0; animation: fadeup 0.7s ease forwards; }
   .stat-item:last-child { border-right: none; }
   .stat-item:nth-child(1) { animation-delay: 1.0s; }
@@ -111,8 +83,6 @@
   .stat-item:nth-child(4) { animation-delay: 1.3s; }
   .stat-val { font-family: var(--fd); font-size: 38px; font-weight: 900; color: var(--accent); line-height: 1; margin-bottom: 5px; }
   .stat-label { font-size: 11px; font-weight: 600; color: var(--text2); letter-spacing: 0.08em; text-transform: uppercase; }
-
-  /* ABOUT */
   .about { padding: 110px 48px; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
   .about-label { font-size: 11px; font-weight: 700; color: var(--accent); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 18px; }
   .about-headline { font-family: var(--fd); font-size: clamp(40px, 4.5vw, 58px); font-weight: 900; text-transform: uppercase; line-height: 0.93; letter-spacing: -0.01em; margin-bottom: 28px; }
@@ -123,8 +93,6 @@
   .about-img-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 28px; background: linear-gradient(to top, rgba(8,8,8,0.92), transparent); }
   .about-img-caption { font-family: var(--fd); font-size: 13px; font-weight: 700; color: var(--text2); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
   .about-img-name { font-family: var(--fd); font-size: 32px; font-weight: 900; color: var(--text); text-transform: uppercase; }
-
-  /* HOW */
   .how { padding: 90px 48px 110px; background: #0c0c0c; border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); }
   .how-inner { max-width: 1160px; margin: 0 auto; }
   .how-label { font-size: 11px; font-weight: 700; color: var(--accent); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 16px; }
@@ -137,24 +105,17 @@
   .how-num { font-family: var(--fd); font-size: 72px; font-weight: 900; color: var(--text3); line-height: 1; margin-bottom: 24px; }
   .how-title { font-family: var(--fd); font-size: 26px; font-weight: 800; text-transform: uppercase; margin-bottom: 14px; }
   .how-body { font-size: 14px; color: var(--text2); line-height: 1.75; }
-
-  /* CTA */
   .cta-section { padding: 130px 48px; text-align: center; max-width: 680px; margin: 0 auto; }
   .cta-label { font-size: 11px; font-weight: 700; color: var(--accent); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 20px; }
   .cta-headline { font-family: var(--fd); font-size: clamp(56px, 9vw, 96px); font-weight: 900; text-transform: uppercase; line-height: 0.88; margin-bottom: 24px; letter-spacing: -0.01em; }
   .cta-sub { font-size: 17px; color: var(--text2); line-height: 1.7; margin-bottom: 44px; }
-  .cta-form { display: flex; gap: 10px; max-width: 460px; margin: 0 auto; }
+  .cta-form-wrap { max-width: 460px; margin: 0 auto; }
+  .cta-form { display: flex; gap: 10px; }
   .founding-badge { display: inline-block; margin-bottom: 32px; padding: 8px 18px; background: rgba(232,255,71,0.08); border: 0.5px solid rgba(232,255,71,0.2); border-radius: 100px; font-size: 12px; font-weight: 700; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; }
-
-  /* FOOTER */
   footer { padding: 32px 48px; border-top: 0.5px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
   .footer-logo { font-family: var(--fd); font-size: 14px; font-weight: 900; letter-spacing: 0.22em; color: var(--accent); text-transform: uppercase; }
   .footer-copy { font-size: 12px; color: var(--text3); }
-
-  /* ANIMATIONS */
   @keyframes fadeup { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
-
-  /* MOBILE */
   @media (max-width: 768px) {
     nav { padding: 16px 20px; }
     .hero-content { padding: 24px 20px 52px; }
@@ -167,48 +128,50 @@
     .cta-section { padding: 80px 20px; }
     .cta-form { flex-direction: column; }
     .waitlist-form { flex-direction: column; }
+    .name-row { flex-direction: column; }
     footer { padding: 24px 20px; flex-direction: column; gap: 8px; text-align: center; }
   }
 </style>
 </head>
 <body>
-
 <nav>
   <div class="nav-logo">PEAK 65</div>
   <a class="nav-ig" href="https://instagram.com/getpeak65" target="_blank">@getpeak65</a>
 </nav>
-
-<!-- HERO -->
 <section class="hero">
   <div class="hero-img"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-eyebrow">World Championship Hyrox Programming · Now For Everyone</div>
     <h1 class="hero-headline">What's<br>Your <em>65?</em></h1>
-    <p class="hero-sub">
-      The same coaching system that took an athlete to <strong>Hyrox World Championships</strong> — now powered by AI, built around your body, your wearable data, and your number.
-    </p>
-    <form class="waitlist-form" id="hero-form" onsubmit="submitForm(event,'hero')">
-      <input class="waitlist-input" type="email" placeholder="Enter your email" required/>
-      <button class="waitlist-btn" type="submit">Get Early Access</button>
-    </form>
-    <div class="success-msg" id="hero-success">
-      <div class="success-check">✓</div>
-      <div class="success-text">You're on the list. <span>We'll be in touch.</span><br>Follow @getpeak65 for updates.</div>
+    <p class="hero-sub">The same coaching system that took an athlete to <strong>Hyrox World Championships</strong> — now powered by AI, built around your body, your wearable data, and your number.</p>
+    <div class="form-wrap" id="hero-form-wrap">
+      <form class="waitlist-form" id="hero-email-form" onsubmit="submitEmail(event,'hero')">
+        <input class="waitlist-input" type="email" placeholder="Enter your email" required/>
+        <button class="waitlist-btn" type="submit">Get Early Access</button>
+      </form>
+      <div class="name-form" id="hero-name-form">
+        <p class="name-label">One more thing — what's your name?</p>
+        <div class="name-row">
+          <input class="waitlist-input" type="text" id="hero-first" placeholder="First name" required/>
+          <input class="waitlist-input" type="text" id="hero-last" placeholder="Last name" required/>
+        </div>
+        <button class="waitlist-btn" onclick="submitName(event,'hero')">Complete Sign Up</button>
+      </div>
+      <div class="success-msg" id="hero-success">
+        <div class="success-check">✓</div>
+        <div class="success-text">You're on the list. <span>We'll be in touch.</span><br>Follow @getpeak65 for updates.</div>
+      </div>
+      <p class="form-note" id="hero-note">No spam. Early access only. Unsubscribe anytime.</p>
     </div>
-    <p class="form-note">No spam. Early access only. Unsubscribe anytime.</p>
   </div>
 </section>
-
-<!-- STATS -->
 <div class="stats-strip">
   <div class="stat-item"><div class="stat-val">1:05</div><div class="stat-label">The Number That Started This</div></div>
   <div class="stat-item"><div class="stat-val">Worlds</div><div class="stat-label">Where Our Athlete Is Headed</div></div>
   <div class="stat-item"><div class="stat-val">AI</div><div class="stat-label">Adapts Daily To Your Body</div></div>
   <div class="stat-item"><div class="stat-val">$0</div><div class="stat-label">To Join The Waitlist Today</div></div>
 </div>
-
-<!-- ABOUT -->
 <section class="about">
   <div>
     <div class="about-label">The Story Behind The App</div>
@@ -225,8 +188,6 @@
     </div>
   </div>
 </section>
-
-<!-- HOW IT WORKS -->
 <section class="how">
   <div class="how-inner">
     <div class="how-label">How It Works</div>
@@ -250,38 +211,45 @@
     </div>
   </div>
 </section>
-
-<!-- BOTTOM CTA -->
 <section class="cta-section">
   <div class="cta-label">Early Access · Limited Spots</div>
   <div class="founding-badge">⚡ Founding Member Pricing — Locked For Life</div>
   <h2 class="cta-headline">Your Race.<br>Your<br>Number.</h2>
   <p class="cta-sub">Join the waitlist and be first in when Peak 65 launches. Founding members get the lowest price we'll ever offer — permanently.</p>
-  <form class="cta-form" id="cta-form" onsubmit="submitForm(event,'cta')">
-    <input class="waitlist-input" type="email" placeholder="Your email address" required style="flex:1;"/>
-    <button class="waitlist-btn" type="submit">Join Waitlist</button>
-  </form>
-  <div class="success-msg" id="cta-success" style="margin:20px auto 0;max-width:460px;text-align:left;">
-    <div class="success-check">✓</div>
-    <div class="success-text">You're on the list. <span>Founding pricing locked.</span><br>We'll email you the moment we launch.</div>
+  <div class="cta-form-wrap" id="cta-form-wrap">
+    <form class="cta-form" id="cta-email-form" onsubmit="submitEmail(event,'cta')">
+      <input class="waitlist-input" type="email" placeholder="Your email address" required style="flex:1;"/>
+      <button class="waitlist-btn" type="submit" style="width:auto;">Join Waitlist</button>
+    </form>
+    <div class="name-form" id="cta-name-form" style="margin-top:0;">
+      <p class="name-label">One more thing — what's your name?</p>
+      <div class="name-row">
+        <input class="waitlist-input" type="text" id="cta-first" placeholder="First name"/>
+        <input class="waitlist-input" type="text" id="cta-last" placeholder="Last name"/>
+      </div>
+      <button class="waitlist-btn" onclick="submitName(event,'cta')">Complete Sign Up</button>
+    </div>
+    <div class="success-msg" id="cta-success" style="margin:20px auto 0;text-align:left;">
+      <div class="success-check">✓</div>
+      <div class="success-text">You're on the list. <span>Founding pricing locked.</span><br>We'll email you the moment we launch.</div>
+    </div>
   </div>
   <p style="font-size:12px;color:var(--text3);margin-top:18px;">No spam. Early access only. Unsubscribe anytime.</p>
 </section>
-
-<!-- FOOTER -->
 <footer>
   <div class="footer-logo">PEAK 65</div>
   <div class="footer-copy">© 2025 Peak 65 · getpeak65.com · @getpeak65</div>
 </footer>
-
 <script>
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxCdjyhCtdmHHIqa4Ex_T2l6NUD6FswDUta4UrBNYIX7DLvr_R7-DnmpPOVQ4_j4FK0/exec';
+const emails = {};
 
-async function submitForm(e, formId) {
+async function submitEmail(e, formId) {
   e.preventDefault();
   const form = e.target;
   const email = form.querySelector('input[type="email"]').value;
   const btn = form.querySelector('button');
+  emails[formId] = email;
   btn.textContent = 'Saving...';
   btn.style.opacity = '0.7';
   try {
@@ -289,18 +257,36 @@ async function submitForm(e, formId) {
       method: 'POST',
       mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, timestamp: new Date().toISOString(), source: formId })
+      body: JSON.stringify({ type: 'email', email, timestamp: new Date().toISOString(), source: formId })
     });
   } catch(err) {}
   form.style.display = 'none';
-  document.getElementById(formId + '-success').classList.add('show');
+  document.getElementById(formId + '-name-form').classList.add('show');
   if (formId === 'hero') {
-    const note = document.querySelector('.form-note');
+    const note = document.getElementById('hero-note');
     if (note) note.style.display = 'none';
   }
 }
 
-// Scroll reveal
+async function submitName(e, formId) {
+  e.preventDefault();
+  const firstName = document.getElementById(formId + '-first').value.trim();
+  const lastName = document.getElementById(formId + '-last').value.trim();
+  const email = emails[formId];
+  const btn = e.target;
+  btn.textContent = 'Sending...';
+  btn.style.opacity = '0.7';
+  try {
+    await fetch('/api/waitlist', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, firstName, lastName })
+    });
+  } catch(err) {}
+  document.getElementById(formId + '-name-form').classList.remove('show');
+  document.getElementById(formId + '-success').classList.add('show');
+}
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(el => {
     if (el.isIntersecting) {
