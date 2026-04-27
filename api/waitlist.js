@@ -56,7 +56,7 @@ export default async function handler(req, res) {
             </td></tr>
             <tr><td style="padding-bottom:24px;">
               <p style="margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#e8ff47;">02 — Assessment Week</p>
-              <p style="margin:0;font-size:15px;color:#8a877f;line-height:1.65;">Day one starts with three time trials — 8K run, 5K ski, 5K row. Your results set every pace, every zone, every progression going forward.</p>
+              <p style="margin:0;font-size:15px;color:#8a877f;line-height:1.65;">Week one starts with an assessment — a short series of efforts that tells us exactly where you are, so every session after it is built around your real data. Not a guess. Not a template.</p>
             </td></tr>
             <tr><td style="padding-bottom:24px;">
               <p style="margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#e8ff47;">03 — Wearable Driven</p>
